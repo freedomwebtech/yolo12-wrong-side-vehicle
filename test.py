@@ -26,7 +26,7 @@ frame_count = 0
 area1=[(297,316),(288,355),(526,339),(518,299)]
 area2=[(284,364),(269,404),(535,389),(523,346)]
 
-w1={}
+
 while True:
     ret, frame = cap.read()
     if not ret:
@@ -53,7 +53,7 @@ while True:
                 cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
                  
 
-    print(w1)       
+      
     cv2.polylines(frame,[np.array(area1,np.int32)],True,(0,0,255),2)
     cv2.polylines(frame,[np.array(area2,np.int32)],True,(0,0,255),2)
 
