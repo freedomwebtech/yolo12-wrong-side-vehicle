@@ -47,21 +47,11 @@ while True:
         for track_id, box, class_id in zip(ids, boxes, class_ids):
             x1, y1, x2, y2 = box
             label = names[class_id]
-            cx=int(x1+x2)//2
-            cy=int(y1+y2)//2
-            # Draw box and label
-            result=cv2.pointPolygonTest(np.array(area1,np.int32),(cx,cy),False)
-            if result>=0:
-               w1[track_id]=(cx,cy)
-            if track_id in w1:
-               result1=cv2.pointPolygonTest(np.array(area2,np.int32),(cx,cy),False)
-               if result1>=0:
-                  cv2.circle(frame,(cx,cy),4,(255,0,0),-1)
-                  cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
-                  cv2.putText(frame, label, (x1 + 3, y1 - 7),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
-                  cv2.putText(frame, "wrong-side", (x2 + 3, y2 - 7),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
+            cv2.circle(frame,(cx,cy),4,(255,0,0),-1)
+            cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
+            cv2.putText(frame, label, (x1 + 3, y1 - 7),
+                cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
+                 
 
     print(w1)       
     cv2.polylines(frame,[np.array(area1,np.int32)],True,(0,0,255),2)
