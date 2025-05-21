@@ -47,7 +47,7 @@ while True:
         for track_id, box, class_id in zip(ids, boxes, class_ids):
             x1, y1, x2, y2 = box
             label = names[class_id]
-            cv2.circle(frame,(cx,cy),4,(255,0,0),-1)
+#            cv2.circle(frame,(cx,cy),4,(255,0,0),-1)
             cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
             cv2.putText(frame, label, (x1 + 3, y1 - 7),
                 cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
