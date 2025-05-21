@@ -54,8 +54,8 @@ while True:
                  
 
       
-    cv2.polylines(frame,[np.array(area1,np.int32)],True,(0,0,255),2)
-    cv2.polylines(frame,[np.array(area2,np.int32)],True,(0,0,255),2)
+#    cv2.polylines(frame,[np.array(area1,np.int32)],True,(0,0,255),2)
+#    cv2.polylines(frame,[np.array(area2,np.int32)],True,(0,0,255),2)
 
     cv2.imshow("RGB", frame)
     if cv2.waitKey(0) & 0xFF == 27:  # ESC to quit
